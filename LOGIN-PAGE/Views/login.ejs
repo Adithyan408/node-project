@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+      }
+      .login-box {
+        background: white;
+        padding: 40px 50px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+      }
+      .login-box input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .login-box button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #4facfe;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .login-box button:hover {
+        background: #3a8de0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h3>LOGIN</h3>
+      <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <p style="color: red;" > <%=msg%></p>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
