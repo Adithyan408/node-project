@@ -1,11 +1,16 @@
 import nocache from "nocache";
 import session from "express-session";
 import express from "express";
+import cors from "cors"
 
 const app = express();
+
 app.set("view engine", "ejs");
+
 app.use(express.urlencoded({ extended: true }));
 app.use(nocache());
+
+app.use(cors());
 
 app.use(
   session({
@@ -49,6 +54,12 @@ app.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/login");
 });
+
+
+app.use((req, res) => {
+  res.redirect("/login")
+})
+
 
 app.listen(3000, () => {
   console.log("Running on Port http://localhost:3000");
